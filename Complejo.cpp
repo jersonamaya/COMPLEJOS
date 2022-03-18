@@ -71,7 +71,50 @@ void Complejo::suma( Complejo *comp1,const Complejo * const comp2){
  	return suma;
  	
  }
+//funcion friend
+ 
+ Complejo &operator +(const Complejo &C1,const Complejo &C2){
+ 	
+ 	double real= C1.real+C2.real;
+ 	double img= C1.Imaginaria+C2.Imaginaria;
+ 	
+ 	return *(new Complejo(real,img));
+ 	
+ 	
+ }
+ 
+ 
+ Complejo &operator -(const Complejo &C1,const Complejo &C2){
+ 	 
+ 	 
+ 	
+ 	return *(new Complejo(C1.real-C2.real,C1.Imaginaria-C2.Imaginaria));
+ }
+ 
+ ostream &operator <<(ostream & mensaje,const Complejo &complejo){
+ 	
+char operador;
+ 
+ if(complejo.Imaginaria>0)
+ operador='+';
+ 
+mensaje<<complejo.real<<operador<<complejo.Imaginaria<<'i'<<endl;
 
+
+return mensaje;
+ 	
+ }
+ 
+ Complejo &operator *(const Complejo &C1,const Complejo &C2 ){
+	
+	
+	double real=(C1.real*C2.real)+(C1.Imaginaria*C2.Imaginaria);
+	double img=(C1.real*C2.Imaginaria)+(C1.Imaginaria*C2.real);
+	return *(new Complejo(real,img));
+ 
+}
+ 
+ 
 void Complejo:: multiplicacion(const Complejo*comp1,const Complejo*comp2){
 	
 	this->real= (comp1->real*comp2->real)+(comp1->Imaginaria*comp2->Imaginaria);

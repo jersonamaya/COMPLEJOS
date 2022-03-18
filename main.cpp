@@ -4,7 +4,7 @@
 
 int main(){
   
-  Complejo C1(2,-3),C2(1,3),resultado(0,0),result2;
+  Complejo C1(2,-3),C2(1,3),resultado(0,0),result2,result3;
     cout<<"programa que trabaja con numero complejos:"<<endl;
     C1.mostrarComplejo();
     C2.mostrarComplejo();
@@ -33,7 +33,19 @@ resultado.mostrarComplejo();
  /*cout<<"division:"<<endl;
  C1.div(&C1,&C2);
  C1.mostrarComplejo();*/
-
+ 
+ 
+ cout<<"sobrecarga de operadores"<<endl;
+  result2= C1+C2;
+  
+cout<<result2;
+ 
+ cout<<"resta"<<endl;
+ result3=C1-C2;
+ cout<<result3;
+ cout<<"multiplicacion"<<endl;
+ resultado= C1*C2;
+ cout<<resultado;
      return 0;
 }	
  	

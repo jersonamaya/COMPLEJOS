@@ -10,7 +10,10 @@ using std::ostream;
 class Complejo{
 
 	
-	
+	friend Complejo &operator +(const Complejo &,const Complejo &);
+	friend Complejo &operator -(const Complejo &,const Complejo &);
+	friend Complejo &operator *(const Complejo &,const Complejo &);
+	friend ostream &operator <<(ostream &,const Complejo&);
 	public: Complejo(const double,const double);
 	     Complejo();
 	
